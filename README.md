@@ -34,7 +34,8 @@
 ## 👥 Število uporabnikov
 
 MPAndroidChart uporablja na tisoče razvijalcev in je ena izmed najbolj priljubljenih knjižnic za grafe v Android ekosistemu.  
-![img.png](app/src/main/res/images/img.png)
+
+![img.png](app/src/main/res/drawable/mpcharts_info.png)
 
 ## 🔧 Vzdrževanje projekta
 
@@ -48,3 +49,28 @@ MPAndroidChart uporablja na tisoče razvijalcev in je ena izmed najbolj priljubl
 **MPAndroidChart** je licencirana pod **Apache 2.0** licenco.
 
 Več informacij najdete [tukaj](https://www.apache.org/licenses/LICENSE-2.0).  
+
+---
+
+## 📸 Primeri z implementacijo
+
+### 1. Bar Chart
+![Bar Chart](screenshots/BarChart.png)
+
+**Koda:**
+```kotlin
+// Koda za Bar Chart
+private fun setupBarChart() {
+    val entries = listOf(
+        BarEntry(1f, 10f),
+        BarEntry(2f, 20f),
+        BarEntry(3f, 30f)
+    )
+    val dataSet = BarDataSet(entries, "Bar Chart").apply {
+        color = resources.getColor(android.R.color.holo_blue_light, theme)
+    }
+    val barData = BarData(dataSet)
+    binding.barChart.data = barData
+    binding.barChart.description.isEnabled = false
+    binding.barChart.animateY(1000)
+}
